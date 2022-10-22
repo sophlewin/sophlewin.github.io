@@ -7,5 +7,33 @@
 			</title>
 		</head>
 		<h1> Advent of Code Solutions </h1>
+		<p> (All solutions given in Python) </p>
+		<h4> 2021 Day 1 </h4>
+		  <pre>
+            <code style="background-color: #eee; border: 1px solid #999; display: block">								
+				file = open('input.txt', 'r')
+				lines = file.readlines()
+				values = [int(value.strip()) for value in lines]
+				count = 0
+				for i in range(0, len(values)-1):
+					if(values[i+1]>values[i]):
+						count += 1
+				print(count)
+			</code>
+          </pre>
+		  <pre>
+            <code style="background-color: #eee; border: 1px solid #999; display: block">								
+				file = open('input.txt', 'r')
+				lines = file.readlines()
+				values = [int(value.strip()) for value in lines]
+				count = 0
+				for i in range(0, len(values)-3):
+					sum1 = values[i] + values[i+1] + values[i+2]
+					sum2 = values[i+1] + values[i+2] + values[i+3]
+					if(sum1&ltsum2):
+						count += 1
+				print(count)
+			</code>
+          </pre>
 	</body>
 </html>
