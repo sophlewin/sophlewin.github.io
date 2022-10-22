@@ -35,5 +35,62 @@
 				print(count)
 			</code>
           </pre>
+		  <h4> 2021 Day 2 </h4>
+		  <pre>
+            <code style="background-color: #eee; border: 1px solid #999; display: block">								
+				file = open('input.txt', 'r')
+				lines = file.readlines()
+				horizontal = 0
+				depth = 0
+				for instruction in lines:
+					if(instruction[0]=='f'):
+						horizontal += int(instruction[8])
+					elif(instruction[0]=='u'):
+						depth -= int(instruction[3])
+					else:
+						depth += int(instruction[5])
+				print(depth*horizontal)
+			</code>
+          </pre>
+		  <pre>
+            <code style="background-color: #eee; border: 1px solid #999; display: block">									
+				file = open('input.txt', 'r')
+				lines = file.readlines()
+				horizontal = 0
+				depth = 0
+				aim = 0
+				for instruction in lines:
+					if(instruction[0]=='f'):
+						horizontal += int(instruction[8])
+						depth += (aim * int(instruction[8]))
+					elif(instruction[0]=='u'):
+						aim -= int(instruction[3])
+					else:
+						aim += int(instruction[5])
+				print(depth*horizontal)
+			</code>
+          </pre>
+		  <h4> 2021 Day 3 </h4>
+		  <pre>
+            <code style="background-color: #eee; border: 1px solid #999; display: block">								
+				file = open('input.txt', 'r')
+				lines = file.readlines()
+				gamma = 0
+				epsilon = 0
+				for i in range(0, 12):
+					is_more_ones = 0
+					for binary in lines:
+						if(binary[i]=='0'):
+							is_more_ones-=1
+						else:
+							is_more_ones+=1
+					if(is_more_ones>0):
+						gamma += 2**(11-i)
+					else:
+						epsilon += 2**(11-i)
+				print(gamma*epsilon)
+			</code>
+          </pre>
 	</body>
 </html>
+
