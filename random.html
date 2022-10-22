@@ -31,5 +31,91 @@
                     print("You bet {0} and {1} the bet. You now have ${2}".format(original_bet, win_or_lose, cash))
 			</code>
           </pre>
+        <h4>Python - Various sorting algorithms</h4>
+        <pre>
+            <code style="background-color: #eee; border: 1px solid #999; display: block">								
+                def bubbleSort(numbers):
+                    for i in range(len(numbers)):
+                        for j in range(len(numbers)-1):
+                            if numbers[j] > numbers[j+1]:
+                                temp = numbers[j]
+                                numbers[j] = numbers[j+1]
+                                numbers[j+1] = temp
+                            print(str(numbers))
+                    return numbers
+
+                def mergeSort(numbers):
+                    midpoint = len(numbers)//2
+                    left_half = numbers[0:midpoint]
+                    right_half = numbers[midpoint:len(numbers)]
+                    
+                    mergeSort(left_half)
+                    mergeSort(right_half)
+
+                    count = 0
+                    left_count = 0
+                    right_count = 0
+
+                    while left_count < len(left_half) and right_count < len(right_half):
+                        if right_half[right_count] > left_half[left_count]:
+                            numbers[count] = right_half[right_count]
+                            count+=1
+                        else:
+                            numbers[count] = left_half[left_count]
+                            left_count+=1
+
+                    while left_count < len(left_half):
+                        numbers[count] = left_half[left_count]
+                        count+=1
+                        left_count+=1
+
+                    while right_count < len(right_half):
+                        numbers[count] = right_half[right_count]
+                        count+=1
+                        right_count+=1
+
+                    return numbers
+
+                def mergeSort2(myList):
+                    if len(myList) > 1:
+                        mid = len(myList) // 2
+                        left = myList[:mid]
+                        right = myList[mid:]
+
+                        # Recursive call on each half
+                        mergeSort(left)
+                        mergeSort(right)
+
+                        # Two iterators for traversing the two halves
+                        i = 0
+                        j = 0
+                        
+                        # Iterator for the main list
+                        k = 0
+                        
+                        while i < len(left) and j < len(right):
+                            if left[i] <= right[j]:
+                            # The value from the left half has been used
+                            myList[k] = left[i]
+                            # Move the iterator forward
+                            i += 1
+                            else:
+                                myList[k] = right[j]
+                                j += 1
+                            # Move to the next slot
+                            k += 1
+
+                        # For all the remaining values
+                        while i < len(left):
+                            myList[k] = left[i]
+                            i += 1
+                            k += 1
+
+                        while j < len(right):
+                            myList[k]=right[j]
+                            j += 1
+                            k += 1
+			</code>
+          </pre>
 	</body>
 </html>
