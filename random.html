@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+	<body style="background-color:#F0F8FF; color:#000080">
+		<head>
+			<title>
+				Random Code
+			</title>
+		</head>
+		<h2>A selection of random code snippets I've created</h2>
+        <h4>Python - Martingale Strategy</h4>
+        <pre>
+            <code style="background-color: #eee; border: 1px solid #999; display: block">								
+				import random
+                cash = float(input("Enter starting amount: "))
+                bet = float(input("Enter starting bet: "))
+                no_of_tries = int(input("Enter number of coin flips: "))
+                for coin_toss in range(0, no_of_tries):
+                    original_bet = bet
+                    result = random.randint(0, 1)
+                    if result == 0:
+                        win = False
+                    else:
+                        win = True
+                    if win:
+                        win_or_lose = "won"
+                        cash += bet
+                    else:
+                        win_or_lose = "lost"
+                        cash -= bet
+                        bet = bet*2
+                    print("You bet {0} and {1} the bet. You now have ${2}".format(original_bet, win_or_lose, cash))
+			</code>
+          </pre>
+	</body>
+</html>
