@@ -7,16 +7,324 @@
 			</title>
 		</head>
 		<h1> Project Euler Solutions </h1>
-		<h4> #1 </h4>
+		<p>(All solutions given in Python)</p>
+		<h4> #1 - Multiples of 3 & 5 </h4>
         <pre>
-            <code style="background-color: #eee; border: 1px solid #999; display: block; padding: 20px;">
+            <code style="background-color: #eee; border: 1px solid #999; display: block">
 				total = 0
 				for x in range(1, 1000):
 					if (x % 3 == 0) or (x % 5 == 0):
 						total += x
-				print(total)
-				
+				print(total)		
             </code>
+          </pre>
+		<h4> #2 - Fibonacci Sequence </h4>
+        <pre>
+            <code style="background-color: #eee; border: 1px solid #999; display: block">
+				x = 2
+				y = [1, 2]
+				while x <= 4000000:
+					final_index = len(y)
+					before_1 = y[final_index - 1]
+					before_2 = y[final_index - 2]
+					z = before_1 + before_2
+					y.append(z) 
+					if z % 2 == 0:
+						x += z
+				print(x)
+            </code>
+          </pre>
+		<h4> #3 - Prime Factors </h4>
+        <pre>
+            <code style="background-color: #eee; border: 1px solid #999; display: block">
+				prime = True
+				def isPrime(x):
+					prime = True
+					global prime           
+					for y in range(2, x-1):
+						if x % y == 0:
+							prime = False
+				for y in range(600000000000, 600851475144):
+					isPrime(y)
+					if prime == True:
+						z = y				
+				print(z)
+            </code>
+          </pre>
+		<h4> #4 - Palindromes </h4>
+        <pre>
+            <code style="background-color: #eee; border: 1px solid #999; display: block">
+				palindromes = []
+				for y in range(100, 1000):
+					for x in range(100, 1000):
+						product = str(x*y)
+						reverse = product[::-1]
+						if product == reverse:
+							palindromes.append(int(product))
+				largest = max(palindromes)
+				print(largest)
+            </code>
+          </pre>
+		<h4> #6 - Square Sum </h4>
+        <pre>
+            <code style="background-color: #eee; border: 1px solid #999; display: block">
+				sumOfSquares = 0
+				squareOfSum = 0
+				for x in range(1, 101):
+					sumOfSquares += x**2
+					squareOfSum += x
+				squareOfSum **= 2
+				answer=(sumOfSquares - squareOfSum)
+				print(answer)
+            </code>
+          </pre>
+		  <h4> #7 - Primes </h4>
+        <pre>
+            <code style="background-color: #eee; border: 1px solid #999; display: block">
+				import sys
+				primes = [2]
+				def isPrime(x):
+					prime = True
+					upperBound = (round(x**0.5))-1
+					for y in range(2, upperBound):
+						if x % y == 0:
+							prime = False
+					if prime == True:
+						primes.append(x)
+				z = 3
+				while True:
+					isPrime(z)
+					percent = ((len(primes))/10001)*100
+					print(percent)
+					z+=2 #skips even numbers
+					if len(primes) == 10001:
+						print(primes[10000])
+						sys.exit()
+            </code>
+          </pre>
+		  <h4> #8 - Largest Product </h4>
+        <pre>
+            <code style="background-color: #eee; border: 1px solid #999; display: block">
+				num = str(731671765313306249192251196744265747423553491949349698352031277450632623957831801698480186947885184385861560789112949495459501737958331952853208805511125406987471585238630507156932909632952274430435576689664895044524452316173185640309871112172238311362229893423380308135336276614282806444486645238749303589072962904915604407723907138105158593079608667017242712188399879790879227492190169972088809377665727333001053367881220235421809751254540594752245258490771167055601360483958644670632441572215539753697817977846174064955149290862569321978468622482839722413756570560574902614079729686524145351004748216637048440319989000889524345065854122758866688116427171479924442928230863465674813919123162824586178664583591245665294765456828489128831426076900422421902267105562632111110937054421750694165896040807198403850962455444362981230987879927244284909188845801561660979191338754992005240636899125607176060588611646710940507754100225698315520005593572972571636269561882670428252483600823257530420752963450)
+				x = 0
+				greatestProduct = 0
+				while x < 1001:
+					product = 1
+					substring = num[x:(x+13)]
+					for y in substring:
+						y = int(y)
+						product = product*y
+					if product > greatestProduct:
+						greatestProduct = product
+					x+=1
+				print(greatestProduct)
+            </code>
+          </pre>
+		  <h4> #9 - Pythagorean Triplet </h4>
+        <pre>
+            <code style="background-color: #eee; border: 1px solid #999; display: block">
+				triplets = []
+				squared = []
+				answer = []
+				product = 1
+				x = 1
+				while True:
+					if x < 1000:
+						squared.append(x**2)
+						x+=1
+					else:
+						break
+				for y in squared:
+					index = squared.index(y)
+					if index != (0 or 1):
+						for z in lessThan:
+							for q in lessThan:
+								if z < q:
+									if z + q == y:
+										triplets.append([z, q, y]) 
+				for w in triplets:
+					total = 0
+					for v in w:
+						v = v**0.5
+						total += v
+					if total == 1000:
+						for v in w:
+							answer.append(v**0.5)
+						break
+				for t in answer:
+					product = product*t
+			</code>
+          </pre>
+		  <h4> #10 - Prime Summation </h4>
+        <pre>
+            <code style="background-color: #eee; border: 1px solid #999; display: block">
+				n = 2000000
+				total = 0
+				listt = [True] * n
+				for x in range(2, n):
+					if listt[x]:
+						total += x
+						for y in range(x**2, n, x):
+							listt[y] = False
+				print('answer: ' + str(total))
+			</code>
+          </pre>
+		  <h4> #15 - Lattice </h4>
+        <pre>
+            <code style="background-color: #eee; border: 1px solid #999; display: block">								
+				import math
+				n = 40
+				r = 20
+				answer = (math.factorial(n))/((math.factorial(r))*(math.factorial(n-r)))
+				print(answer)
+			</code>
+          </pre>
+		  <h4> #16 - Power Digit Sum </h4>
+        <pre>
+            <code style="background-color: #eee; border: 1px solid #999; display: block">								
+				total = 0
+				x = 2**1000
+				x = str(x)
+				for char in x:
+					char = int(char)
+					total+=char
+				print(total)
+			</code>
+          </pre>
+		  <h4> #16 - Factorial Digit Sum </h4>
+		  <pre>
+            <code style="background-color: #eee; border: 1px solid #999; display: block">								
+				import math
+				total = 0
+				x = math.factorial(100)
+				x = str(x)
+				for char in x:
+					char = int(char)
+					total += char
+				print(total)
+			</code>
+          </pre>
+		  <h4> #25 - Fibonacci </h4>
+		  <pre>
+            <code style="background-color: #eee; border: 1px solid #999; display: block">								
+				x = [1, 1]
+				while True:
+					y = len(x)
+					a = x[y-1]
+					b = x[y-2]
+					z = a+b
+					x.append(z)
+					w = len(str(z))
+					if w == 1000:
+						print(len(x))
+						break
+			</code>
+          </pre>
+		  <h4> #29 - Distinct Powers </h4>
+		  <pre>
+            <code style="background-color: #eee; border: 1px solid #999; display: block">								
+				List = []
+				for x in range(2, 101):
+					for y in range(2, 101):
+						z = x**y
+						if z not in List:
+							List.append(z)
+				print(len(List))
+			</code>
+          </pre>
+		  <h4> #30 - Digit Fifth Powers </h4>
+		  <pre>
+            <code style="background-color: #eee; border: 1px solid #999; display: block">								
+				Sum = -1 #to account for 1 not being a solution
+				for x in range(1, 1000000):
+					total = 0
+					x = str(x)
+					for y in x:
+						y = (int(y))**5
+						total += y
+					x = int(x)
+					if total == x:
+						Sum += x
+				print(Sum)
+			</code>
+          </pre>
+		  <h4> #34 - Digit Factorials </h4>
+		  <pre>
+            <code style="background-color: #eee; border: 1px solid #999; display: block">								
+				import math
+				answer = 0
+				for x in range(3, 2540160):
+					total = 0
+					listX = list(str(x))
+					for y in listX:
+						y = math.factorial(int(y))
+						total += y
+					if total == x:
+						answer += x
+				print(answer)
+			</code>
+          </pre>
+		  <h4> #41 - Pandigital Primes </h4>
+		  <pre>
+            <code style="background-color: #eee; border: 1px solid #999; display: block">								
+				def isPrime(x):
+					prime = True
+					upperBound = (round(x**0.5))-1
+					for y in range(2, upperBound):
+						if x % y == 0:
+							prime = False
+					return prime
+				def isPandigital(x):
+					pandigital = True
+					x = str(x)
+					length = len(x)
+					listX = [int(y) for y in x]
+					for z in range(1, length+1):
+						if str(z) not in x:
+							pandigital = False
+					return pandigital
+				y = 0
+				for x in range(7500000, 8000000): 
+					if isPandigital(x):
+						if isPrime(x):
+							y = x
+				print(y)
+			</code>
+          </pre>
+		  <h4> #46 - Goldbach </h4>
+		  <pre>
+            <code style="background-color: #eee; border: 1px solid #999; display: block">								
+				def isPrime(x):
+					prime = True
+					upperBound = (round(x**0.5))-1
+					for y in range(2, upperBound):
+						if x % y == 0:
+							prime = False
+					return prime
+				primes = []
+				for x in range(1, 10000):
+					if isPrime(x):
+						primes.append(x)
+				twiceSquares = []
+				for x in range(1, 1000):
+					x = 2 * (x**2)
+					twiceSquares.append(x)					
+				x = 9
+				while True:
+					solution = True
+					if x % 2 == 1:
+						if not isPrime(x):
+							for a in primes:
+								for b in twiceSquares:
+									if a + b == x:
+										solution = False
+							if solution:
+								print(x)
+								break
+					x += 1
+			</code>
           </pre>
 	</body>
 </html>
+
+    
