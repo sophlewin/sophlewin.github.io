@@ -1,3 +1,4 @@
+// testing
 document.addEventListener('DOMContentLoaded', function () {
     let links = document.querySelectorAll('a');
     links.forEach(link => {
@@ -20,3 +21,5 @@ document.addEventListener('DOMContentLoaded', function () {
     secretLink.style.top = randomY + 'px';
     document.body.appendChild(secretLink);
 });
+
+// more testing
