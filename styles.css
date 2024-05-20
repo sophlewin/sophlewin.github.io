@@ -26,3 +26,24 @@ a:hover {
     50% { color: #FF4500; }
     100% { color: #000080; }
 }
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(20px);
+    }
+    80% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.bounce {
+    animation: bounceIn 1s ease;
+}
