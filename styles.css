@@ -1,0 +1,28 @@
+body {
+    background-color: #F0F8FF;
+    color: #000080;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    font-size: 3em;
+    animation: colorChange 3s infinite;
+}
+
+a {
+    color: #0000FF;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #FF4500;
+}
+
+@keyframes colorChange {
+    0% { color: #000080; }
+    50% { color: #FF4500; }
+    100% { color: #000080; }
+}
