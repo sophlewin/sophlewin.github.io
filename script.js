@@ -12,11 +12,12 @@ document.addEventListener('DOMContentLoaded', function () {
     secretLink.href = 'secret.html';
     secretLink.textContent = 'secret';
     secretLink.classList.add('secret-link');
-    let maxWidth = window.innerWidth - 100;
-    let maxHeight = window.innerHeight - 50;
+    let maxWidth = window.innerWidth - 100; // Adjust to prevent overflow
+    let maxHeight = window.innerHeight - 50; // Adjust to prevent overflow
     let randomX = Math.floor(Math.random() * maxWidth);
     let randomY = Math.floor(Math.random() * maxHeight);
     secretLink.style.left = randomX + 'px';
     secretLink.style.top = randomY + 'px';
+    
     document.body.appendChild(secretLink);
 });
