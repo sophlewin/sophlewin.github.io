@@ -4,11 +4,12 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     padding: 50px;
+    position: relative;
 }
 
 h1 {
     font-size: 3em;
-    animation: colorChange 3s infinite;
+    animation: colorChange 3s infinite, bounceIn 1s ease;
 }
 
 a {
@@ -44,6 +45,7 @@ a:hover {
     }
 }
 
-.bounce {
-    animation: bounceIn 1s ease;
+.secret-link {
+    position: absolute;
+    font-size: 30px;
 }
